@@ -1,0 +1,1 @@
+from src.infrastructure.external.collectsys.dados_usuario import DadosUsuario

@@ -1,0 +1,2 @@
+class ResultadoExcepiton(Exception):
+    pass

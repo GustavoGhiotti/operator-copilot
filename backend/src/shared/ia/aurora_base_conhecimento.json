@@ -1,0 +1,627 @@
+[
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_abertura",
+    "categoria": "script",
+    "descricao": "Roteiro de abertura da ligação BancoAlfa",
+    "texto": "Durante a abertura da ligação, o operador deve se apresentar mencionando o nome do cliente, o Grupo Acme, avisar que a ligação está sendo gravada e confirmar o CPF. Exemplo: 'Olá, eu sou [nome do operador], falo do Grupo Acme, representando a BancoAlfa do seu cartão amarelo. Informo que a ligação está sendo gravada e, por sigilo bancário, preciso confirmar alguns dados. Vou te dizer os três primeiros números do CPF, você pode me informar os dois últimos dígitos?'"
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_identificacao",
+    "categoria": "script",
+    "descricao": "Procedimento de identificação positiva do cliente",
+    "texto": "A identificação positiva do cliente na carteira BancoAlfa deve ser feita exclusivamente por meio da confirmação do CPF. O operador deve informar os três primeiros números e o cliente deve completar com os dois últimos dígitos. Não é permitido confirmar identidade por outros meios, como nome completo, data de nascimento ou RG. Também é aceita a chamada 'troca casada' na identificação positiva (IP), em que o cliente informa os três primeiros dígitos e o operador confirma os dois últimos."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_apresentacao_divida",
+    "categoria": "script",
+    "descricao": "Procedimento de apresentação da dívida ao cliente",
+    "texto": "Durante a apresentação da dívida, o operador deve informar de forma clara e profissional os três pontos principais da pendência: (1) o nome do contrato, (2) o tempo em atraso — que pode ser informado em dias ou pela data de vencimento — e (3) o valor atualizado da dívida. Exemplo de abordagem: 'Então (nome do cliente), o motivo do contato hoje é para confirmar o pagamento do seu (empréstimo, cartão, PIX parcelado), que consta em atraso há X dias e está no valor atualizado de X reais. Já houve o pagamento?'."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_ratificacao",
+    "categoria": "script",
+    "descricao": "Etapa de ratificação da negociação com o cliente",
+    "texto": "Na ratificação, o operador deve formalizar o acordo de forma firme, evitando fragilidade na negociação. Os pontos obrigatórios são: confirmar a data de vencimento, o valor à vista ou da entrada e parcelas, o modo de envio do boleto, e o IOF aplicado na primeira parcela. Caso o cliente demonstre interesse em realizar o acordo via aplicativo (APP), não é necessário enviar o boleto."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_selo_negocio",
+    "categoria": "script",
+    "descricao": "Confirmação final do compromisso de pagamento pelo cliente",
+    "texto": "O 'Selo do Negócio' é a etapa final após a ratificação. Ele serve para garantir que o cliente está realmente comprometido com o pagamento e reforçar a certeza do acordo. O operador deve confirmar o comprometimento do cliente utilizando frases como: 'Olha (nome do cliente), é uma certeza de pagamento?' ou 'Você realmente se compromete com esse acordo?'. Essa etapa é essencial para reduzir desistências e aumentar a efetividade das negociações."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_consequencias_nao_pagamento",
+    "categoria": "script",
+    "descricao": "Orientações sobre os efeitos do não pagamento de uma dívida",
+    "texto": "O operador deve explicar de forma clara as consequências de não realizar o pagamento dentro do prazo acordado. É importante informar ao cliente que, ao efetuar o pagamento, ocorrerá a retirada do nome de restrição no SPC e SERASA em até 5 dias úteis, a paralisação das ligações de cobrança, a suspensão de juros e multas, e a regularização completa da dívida. Essas informações devem ser passadas com tom informativo e empático, sem tom de ameaça."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_atualizacao_cadastral",
+    "categoria": "procedimento",
+    "descricao": "Confirmação de dados cadastrais e envio de boleto",
+    "texto": "Na etapa de atualização cadastral, o operador deve confirmar com o cliente o e-mail e o número de telefone, ou pelo menos um dos dois. Também deve confirmar o envio do boleto. Em casos de pagamento pelo aplicativo (APP), tanto para Empréstimo quanto para EP, não é necessário enviar o boleto. A atualização cadastral deve se limitar a e-mail e telefone — não é necessário confirmar endereço residencial."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_canais_atendimento",
+    "categoria": "informativo",
+    "descricao": "Lista oficial dos canais de atendimento BancoAlfa",
+    "texto": "Os canais oficiais de atendimento do BancoAlfa são: Central Alfa Variável: 0800 000 1495; SAC do BancoAlfa: 0800 772 1026; Dúvidas DE negociação: 0800 400 5228; e o site de suporte: www.ajuda.bancoalfa.com.br. Esses contatos devem ser informados ao cliente durante o encerramento da ligação ou enviados por SMS, conforme o procedimento padrão."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "tabulacoes",
+    "categoria": "procedimento",
+    "descricao": "Guia completo de tabulações e seus significados para a carteira BancoAlfa",
+    "texto": "As tabulações são utilizadas para registrar o resultado de cada atendimento e garantir a rastreabilidade da ligação. O operador deve escolher a tabulação que melhor representa o ocorrido. Abaixo, as definições oficiais da carteira BancoAlfa: \n\n1️⃣ Ligação Muda — O cliente atende, mas não há resposta do outro lado. Exemplo: o atendente fala, mas não recebe retorno. \n\n2️⃣ Ligação Caiu — A chamada foi desconectada antes da conclusão. Exemplo: o cliente atendeu, mas a ligação foi interrompida por falha técnica. \n\n3️⃣ Cliente Desligou — Ocorre quando localizamos o cliente e o contato se encerra sem posicionamento. \n\n4️⃣ Cliente Não Confirma Dados — O cliente se recusa a realizar a confirmação do CPF ou informa números incorretos. \n\n5️⃣ Desconhecido No Telefone — O terceiro informa não conhecer o titular do CPF. \n\n6️⃣ Retornar — Cliente ou terceiro solicita contato em outro momento, antes ou depois da confirmação. \n\n7️⃣ Não Localizado — O terceiro informa que conhece o cliente, mas não sabe onde ele se encontra. \n\n8️⃣ Recado — Quando são passados os canais de atendimento para o terceiro. \n\n9️⃣ Ação Judicial em Andamento — Cliente informa que já deu início a uma ação judicial contra a empresa. \n\n🔟 Alega Pagamento — Cliente informa que já realizou o pagamento. Nesses casos, o operador deve solicitar o comprovante. \n\n11️⃣ Cliente Pede Retorno em Outro Dia/Horário — Cliente solicita novo contato em outro momento. \n\n12️⃣ Recusa de Pagamento — Cliente se recusa a pagar por algum motivo. \n\n13️⃣ Sem Condições de Pagamento — Cliente informa que não consegue pagar. Subtabulações possíveis: Desemprego, Redução de renda, Condição da oferta ou Doença. \n\n14️⃣ Cliente Desconhece a Dívida — Cliente informa não reconhecer a dívida. \n\n15️⃣ Cliente Desconhece o Cartão / Fraude — Cliente alega não ter realizado a compra. Nesses casos, deve ser orientado a verificar pelo chat do APP ou site www.bancoalfa.com.br. \n\n16️⃣ Contrato em Inibição — Quando o cartão do cliente está em fechamento de fatura, não sendo possível parcelar; o valor fica zerado. \n\n17️⃣ Acordo Formalizado — Cliente aceita os termos do acordo negociado. \n\n18️⃣ Acordo Via APP (Fixa ou EP) — Cliente informa que fará a negociação via aplicativo, faz isso em linha ou garante que fará o pagamento. Também usada quando já possui acordo no app, mas ainda não efetuou o pagamento. \n\n19️⃣ Erro Sistêmico — Quando há falha no sistema que impossibilita o atendimento. \n\n20️⃣ Promessa de Pagamento Confirmada — Utilizada para ligações de manutenção, quando o cliente já possui um acordo e o operador precisa confirmar novamente a promessa. \n\n📞 Canais oficiais de atendimento para uso nas tabulações: Central Alfa Variável — 0800 000 1495; SAC BancoAlfa — 0800 772 1026; Dúvidas de negociação — 0800 400 5228; Site de suporte — www.ajuda.bancoalfa.com.br."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "conduta_restrita",
+    "categoria": "regras",
+    "descricao": "Ações proibidas e condutas que violam as políticas da carteira BancoAlfa e da assessoria Acme",
+    "texto": "A Aurora e os operadores da carteira BancoAlfa devem respeitar rigorosamente as normas de conduta e ética durante qualquer interação. Os seguintes comportamentos são proibidos e não podem ser orientados, sugeridos ou realizados: 1️⃣ Desvio de tabulação — tabular de forma divergente ao ocorrido em linha. 2️⃣ Quebra de sigilo — realizar identificação positiva incorreta ou mencionar qualquer informação sobre a dívida antes da identificação do cliente (qualquer referência à dívida sem IP é considerada violação). 3️⃣ Falta de ética — emitir opiniões ou comentários que comprometam a imagem do BancoAlfa, da Acme, de concorrentes ou de qualquer terceiro. 4️⃣ Falta de postura — utilizar palavras de baixo calão, agir com rispidez, se ausentar sem sinalização, ou fazer comentários inadequados durante o atendimento. 5️⃣ Transmitir informação incorreta — repassar dados falsos ou imprecisos que possam prejudicar o cliente, como prazos errados para retirada de restrição, locais de pagamento incorretos (ex: informar que o pagamento pode ser feito 'em agência do Alfa'), ou qualquer informação não confirmada oficialmente. 6️⃣ Garantias inexistentes — prometer prazos menores, aumentos de limite, novas linhas de crédito ou qualquer benefício que não esteja previsto nas regras da carteira. Qualquer orientação ou fala da Aurora relacionada a esses tópicos deve ser bloqueada automaticamente."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "treinamento_encerramento",
+    "categoria": "script",
+    "descricao": "Roteiro de encerramento da ligação com o cliente",
+    "texto": "No encerramento da ligação, o operador deve informar os canais de atendimento disponíveis (0800) ou mencionar que enviará os canais por SMS. É importante verificar se o cliente possui dúvidas, solicitar o envio do comprovante de pagamento via WhatsApp, e finalizar a conversa de forma cordial, agradecendo a atenção e desejando um bom dia, tarde ou noite conforme o horário."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "negociacao_geral",
+    "categoria": "procedimento",
+    "descricao": "Fluxo padrão de negociação utilizado em todas as operações da carteira BancoAlfa",
+    "texto": "O operador deve realizar ofertas de forma gradativa, priorizando o pagamento no dia do contato. A sequência ideal é: 1️⃣ Ofertar o pagamento à vista. 2️⃣ Em seguida, oferecer parcelamento com valor de entrada superior às parcelas. 3️⃣ Sempre confirmar valor, data e forma de pagamento antes de finalizar. A regularização deve seguir as regras específicas de cada produto (Fixa, Variável, Empréstimo, CRELI ou PIX)."
+  },
+
+  {
+    "carteira": "BANCOALFA GERAL",
+    "produto": "ep_pix",
+    "categoria": "regras",
+    "descricao": "Procedimentos de pagamento aplicáveis exclusivamente a contratos de Empréstimo Pessoal (EP) e PIX Parcelado BancoAlfa",
+    "texto": "Quando o contrato for de um Empréstimo Pessoal, existe a opção do pagamento via BOLETO e PIX🔹 Produtos que permitem pagamento via BOLETO e PIX:\n- INSTALLMENT_PIX\n- PERSONAL_LOAN\n- RENEGOTIATION_PERSONAL_LOAN\n- INSTALLMENT_PURCHASE_PERSONAL_LOAN\n- RENEGOTIATION_INSTALLMENT_PIX\n\n🔹 Como ativar a função (apenas para empréstimos):\n1️⃣ Na tela 'Gerar Acordo', acessar o menu 'Cálculo de Detalhe'.\n2️⃣ Selecionar a 'Forma de Negociação' (RENEG), que corresponde à renegociação do saldo total.\n3️⃣ Escolher o 'Tipo de Pagamento da BancoAlfa', que pode ser **BOLETO** ou **PIX**.\n4️⃣ Após selecionar a forma de negociação e o tipo de pagamento, o operador deve calcular o acordo utilizando a calculadora do sistema.\n5️⃣ Em seguida, aplicar o 'Plano do Acordo' e o 'Plano de Desconto' e recalcular para obter o retorno correto da forma de pagamento escolhida.\n\n🔹 Regras de restrição:\n- Para contratos com até **15 dias de atraso**, a opção de pagamento **via PIX não deve ser ofertada** — o operador deve realizar o acordo somente via **boleto**.\n- Essa limitação é obrigatória e tem como objetivo evitar inconsistências no processamento de pagamentos automáticos.\n\n🔹 Orientações adicionais ao operador:\n- Confirmar sempre o valor e a data de pagamento antes da formalização.\n- Verificar se o tipo de pagamento (PIX ou BOLETO) está disponível no sistema antes de prosseguir.\n- Caso o cliente insista no PIX e o sistema não permita, informar de forma cordial que essa opção não está disponível para o contrato.\n\n🔹 Resumo prático:\n- O fluxo EP/PIX só é aplicado para **empréstimos pessoais e renegociações de empréstimos**.\n- Outros produtos da carteira BancoAlfa (como Cartão, CRELI ou faturas fixas) **não utilizam essa modalidade de pagamento**.\n\nEssas regras garantem a formalização correta dos acordos de empréstimo e a conformidade com os procedimentos operacionais do BancoAlfa."
+  },
+
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "cartao_cancelado",
+    "categoria": "regras",
+    "descricao": "Negociação do cartão cancelado — BancoAlfa Variável",
+    "texto": "Carteira referente a contratos com mais de 61 dias de atraso. O cartão está cancelado e, mesmo com o pagamento, não retorna para uso. As condições são: desconto de até 100%, parcelamento em até 24x, régua de negociação D+2 (com exceção D+6 mediante autorização do supervisor), e taxa de IOF incluída na primeira parcela."
+  },
+
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira com contrato acima de 61 dias",
+    "texto": "Se for feito o parcelamento, as próximas parcelas serão retiradas pelo aplicativo"
+  },
+
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "quitacao_cartao",
+    "categoria": "regras",
+    "descricao": "Quitação definitiva do cartão de crédito cancelado",
+    "texto": "Mesmo após o pagamento, o cartão não retorna para uso imediato. O cliente deve passar por uma nova análise de crédito, sem garantias de reativação. Os próximos pagamentos serão feitos pelo aplicativo BancoAlfa. O app não bloqueia o acesso, mas é obrigatório informar o cliente sobre a taxa de IOF na primeira parcela."
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira com contrato acima de 61 dias",
+    "texto": "Sempre ofereça o parcelamento como opção secundária"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI — Cartão de Crédito",
+    "texto": "O CRELI é aplicado apenas para o cartão de crédito. O pagamento da entrada deve ser feito por boleto, podendo o cliente emitir pelo app. As demais parcelas são debitadas automaticamente do saldo em conta na data programada. É essencial orientar o cliente a manter saldo disponível na conta. As datas das parcelas são definidas na negociação e não seguem o vencimento da fatura."
+  },
+
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Se não for CRELI, pode acontecer de o cliente não negociar todo o saldo"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "A partir de 50 dias de atraso"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Desconto de até 100%"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Parcelamento em até 24x"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Régua de negociação é D+2 (com exceção D+6, pedir para supervisor) apenas em dias úteis"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Cartão está cancelado, mesmo com o pagamento não retorna para uso"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Negociação total do cartão (todo o saldo)"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Primeira parcela paga via boleto"
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli",
+    "categoria": "regras",
+    "descricao": "Negociação via CRELI",
+    "texto": "Próximas parcelas via débito em conta"
+  },
+
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "raspa_conta",
+    "categoria": "definição",
+    "descricao": "Explicação do termo 'raspa conta' no contexto do BancoAlfa",
+    "sinonimos": ["raspa conta", "raspagem de conta", "raspa-conta"],
+    "texto": "Raspa conta é o nome dado à funcionalidade automática do sistema do BancoAlfa que desconta valores diretamente da conta do cliente assim que há saldo disponível. Ela é usada para quitar acordos ou parcelas pendentes sem necessidade de boleto, especialmente para contratos com até 15 dias de atraso. Nesse período, o pagamento ocorre via débito automático e não há necessidade de emissão de boleto."
+  },
+
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "emprestimo_pessoal",
+    "categoria": "regras",
+    "descricao": "Negociação de empréstimo pessoal BancoAlfa",
+    "texto": "O empréstimo pessoal pode ter desconto de até 100% e parcelamento em até 36x. Contratos com até 15 dias de atraso (PP) só podem ser pagos via débito em conta devido à raspa conta. Raspa conta ocorre quando o cliente deposita ou transfere dinheiro e o sistema realiza o débito automaticamente. Acima de 15 dias, o pagamento deve ser feito via boleto. O cartão de crédito bloqueia após 5 dias de atraso do empréstimo."
+  },
+
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "pix_parcelado",
+    "categoria": "regras",
+    "descricao": "Negociação de contratos do tipo PIX Parcelado",
+    "texto": "O PIX Parcelado é uma modalidade independente do cartão. Ele possui desconto de até 100%, mas é apenas à vista, sem parcelamento. O pagamento deve ser feito via boleto da negociação ou pelo app, caso o cliente prefira. Caso o cliente insista em pagar via app, confirmar valor e data e registrar como Acordo Via APP."
+  },
+  {
+    "carteira": "BANCOALFA VARIAVEL",
+    "produto": "creli_pix_boleto",
+    "categoria": "regras",
+    "descricao": "Procedimentos de pagamento aplicáveis aos produtos CRELI da carteira BancoAlfa Variável",
+    "texto": "Quando o contrato for CRELI, existe a opção do pagamento via BOLETO e PIX. Elas não se aplicam a outros tipos de contrato, como o Cartão BancoAlfa II.\n\n🔹 Produtos que permitem pagamento via BOLETO e PIX:\n- CRELI\n- RENEGOTIATION_CRELI\n\n🔹 Condições de uso:\nPara os produtos CRELI, o operador pode ofertar o meio de pagamento **BOLETO** ou **PIX**, **independente da faixa de atraso**. Essa flexibilidade é exclusiva dessa categoria, permitindo que o cliente escolha a opção mais conveniente no momento da negociação.\n\n🔹 Como ativar a função (somente para CRELI):\n1️⃣ Na tela 'Gerar Acordo', acessar o menu 'Cálculo de Detalhe'.\n2️⃣ O operador deve selecionar apenas o **Tipo de Pagamento da BancoAlfa** (BOLETO ou PIX).\n3️⃣ Após a seleção, é necessário calcular por meio da calculadora do sistema para aplicar corretamente o plano de acordo e o plano de desconto.\n4️⃣ Confirmar o valor final e a data de vencimento antes de formalizar o acordo.\n\n🔹 Restrições importantes:\n- O produto **BANCO ALFA II (Cartão)** **não possui a opção de pagamento via PIX**, independente da faixa de atraso. O operador **não deve ofertar** essa modalidade ao cliente em hipótese alguma.\n- Caso o cliente insista, o operador deve informar com clareza que o pagamento via PIX não é permitido para contratos do tipo cartão e que a regularização deve ser feita via boleto.\n\n🔹 Reforço operacional:\n- Sempre confirmar com o cliente a forma de pagamento escolhida (PIX ou BOLETO) antes da formalização.\n- Validar no sistema se a opção selecionada está ativa e disponível para o contrato.\n- Garantir que o cálculo da proposta seja realizado novamente após a seleção da forma de pagamento, assegurando consistência nos valores apresentados.\n\nEssas regras garantem a padronização dos atendimentos CRELI e evitam que o operador ofereça meios de pagamento incorretos para produtos que não os suportam, como o Cartão BancoAlfa II."
+  },
+
+  {
+    "carteira": "BANCOALFA FIXA",
+    "produto": "cartao_fixa",
+    "categoria": "regras",
+    "descricao": "Negociação da fatura em atraso — BancoAlfa Fixa",
+    "texto": "A negociação da carteira BancoAlfa Fixa é referente à fatura atual em aberto. As regras são: parcelamento em até 24x, régua de negociação D+2 (com exceção D+6, mediante autorização da supervisão), e não há aplicação de descontos. A taxa de IOF é cobrada na primeira parcela. Com o pagamento, o cartão volta a ter uso normal. Após o parcelamento, as próximas parcelas acompanham a fatura do cartão. Caso o cliente prefira pagar via aplicativo (APP), confirmar valor e data e registrar como Acordo Via APP."
+  },
+  {
+    "carteira": "BANCOALFA FIXA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira com contrato de 5 à 60 dias de atraso",
+    "texto": "Carteira com contrato de 5 à 60 dias de atraso"
+  },
+  {
+    "carteira": "BANCOALFA FIXA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira com contrato de 5 à 60 dias de atraso",
+    "texto": "Negociação apenas da fatura atual e das atrasadas, não é possível juntar as futuras"
+  },
+  {
+    "carteira": "BANCOALFA FIXA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira com contrato de 5 à 60 dias de atraso",
+    "texto": "Taxa de IOF apenas na primeira parcela (valor varia de acordo com o saldo que o cliente está negociando)"
+  },
+
+  {
+    "carteira": "BANCOALFA FIXA",
+    "produto": "ofertas_cartao_fixa",
+    "categoria": "informativo",
+    "descricao": "Modelos de oferta disponíveis para a carteira Fixa",
+    "texto": "As opções de negociação são: (1) Total da fatura, (2) Parcial da fatura, (3) Mínimo da fatura — podem ser pagos com a própria fatura. Para quitação à vista com desconto, é necessário emitir boleto da negociação. Para parcelamento da fatura, a entrada deve ser paga via boleto, e as demais parcelas virão na fatura. Importante: se o cliente pagar usando a fatura em vez do boleto, o pagamento será parcial e o acordo não será efetivado."
+  },
+
+  {
+    "carteira": "BANCOALFA FIXA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira com contrato de 5 à 60 dias de atraso",
+    "texto": "Existem alguns modelos de negociação: Cartão e EP (Empréstimo Pessoal)"
+  },
+
+  {
+    "carteira": "BANCO BETA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira vinculada ao Banco Beta",
+    "texto": "Régua de negociação: D+2 para parcelamento e D+5 para renegociação"
+  },
+  {
+    "carteira": "BANCO BETA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira vinculada ao Banco Beta",
+    "texto": "Após pagamento da entrada, o cartão é bloqueado para uso até nova análise de crédito"
+  },
+  {
+    "carteira": "BANCO BETA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira vinculada ao Banco Beta",
+    "texto": "Negociações sem desconto devem exibir faixa de entrada e quantidade mínima/máxima de parcelas"
+  },
+  {
+    "carteira": "BANCO BETA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira vinculada ao Banco Beta",
+    "texto": "IOF não é cobrado em renegociações"
+  },
+  {
+    "carteira": "BANCO BETA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira vinculada ao Banco Beta",
+    "texto": "Confirmações de dados e gravação da ligação são obrigatórias"
+  },
+  {
+    "carteira": "BANCO BETA",
+    "produto": "geral",
+    "categoria": "regras",
+    "descricao": "Carteira vinculada ao Banco Beta",
+    "texto": "A assessoria Chi realiza o atendimento em nome do Banco Beta"
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "treinamento_abertura",
+    "categoria": "script",
+    "descricao": "Roteiro de abertura da ligação — Banco Delta",
+    "texto": "Durante a abertura da ligação, o operador deve se apresentar de forma profissional, identificando o cliente e garantindo a segurança das informações. Seguir os exemplos abaixo:\n\n1️⃣ Exemplo principal:\n\"Olá, eu sou o (nome do operador), falo do Grupo Acme, representando o Banco Delta. Informo que a ligação está sendo gravada e, por questões de sigilo bancário, preciso confirmar alguns dados. Você pode me informar os três primeiros dígitos do seu CPF?\"\n\n2️⃣ Caso o cliente se recuse a informar o CPF:\n\"Em casos de recusa na confirmação do CPF, podemos realizar a troca casada, utilizando a data de nascimento completa do cliente para validação.\"\n\n3️⃣ Exemplo alternativo com troca casada:\n\"Tudo bem, (nome do cliente). Nesse caso, para prosseguirmos com segurança, você pode me informar a sua data de nascimento completa, por favor?\"\n\n🔹 Informações que não podem faltar na abertura:\n- Nome do operador;\n- Nome do cliente;\n- Grupo Acme;\n- Informação de que a ligação está sendo gravada;\n- Confirmação do CPF (ou data de nascimento, se troca casada)."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "treinamento_apresentacao_divida_cartao",
+    "categoria": "script",
+    "descricao": "Procedimento de apresentação da dívida do cartão — Banco Delta",
+    "texto": "Durante a apresentação da dívida, o operador deve informar de forma clara e objetiva as três informações principais sobre o cartão do cliente. Exemplo de abordagem:\n\n\"(Nome do cliente), o motivo do meu contato hoje é sobre o seu cartão da bandeira X, que venceu em X, e está no valor total de X reais.\"\n\n🔹 Informações obrigatórias a serem apresentadas:\n- Bandeira do cartão;\n- Tempo em atraso (dias em atraso ou data do vencimento);\n- Valor atualizado da dívida.\n\nO operador deve manter um tom cordial e informativo, evitando julgamentos ou interpretações pessoais sobre o débito. Essa etapa é fundamental para contextualizar o cliente e garantir uma negociação transparente."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "cartao_fase_1",
+    "categoria": "regras",
+    "descricao": "Negociação de Cartão — Fase I (Banco Delta)",
+    "texto": "A negociação do Cartão Fase I deve ser conduzida integralmente pelo portal do Banco Delta. O operador deve seguir a sequência de ofertas de forma gradativa e profissional, sempre buscando a melhor condição possível para o cliente.\n\n🔹 Sequência de negociação:\n1️⃣ Ofertar primeiramente o valor total da fatura.\n2️⃣ Caso o cliente apresente objeção, oferecer o valor mínimo da fatura.\n3️⃣ Não havendo aceite, verificar a disponibilidade do parcelamento.\n\n🔹 Observações importantes:\n- Quando o valor total da fatura for igual ao valor mínimo, pode-se seguir diretamente para a oferta do parcelamento.\n- O parcelamento do cartão (Fase I) pode ser realizado em até **12 vezes**, conforme disponibilidade do portal.\n- Antes de ofertar o parcelamento, o operador deve realizar uma sondagem prévia com o cliente, identificando sua disponibilidade de pagamento.\n- A negociação deve ser feita de forma gradativa, apresentando as opções do parcelamento menor para o maior, até encontrar a condição mais adequada ao cliente.\n\n🔹 Procedimento para faturas fechadas:\n- Se a fatura já estiver fechada (exemplo: data de corte 18/10 e o contato ocorrer no mesmo dia), o operador deve aguardar **2 a 3 dias após o fechamento** para realizar a negociação.\n- Caso a negociação seja feita antes ou no mesmo dia do fechamento, o pagamento poderá entrar como **avulso**, gerando inconsistências nos registros financeiros.\n- É essencial verificar sempre a data de corte da fatura e agendar o retorno adequado, garantindo que o pagamento seja processado corretamente.\n\n🔹 Reforço ao cliente:\n- A negociação é segura, feita diretamente com o Banco Delta.\n- Com o pagamento correto, o cartão é desbloqueado e volta ao uso normal.\n- O operador deve conduzir a conversa com clareza e empatia, destacando os benefícios da regularização imediata."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "treinamento_apresentacao_divida_cartao",
+    "categoria": "script",
+    "descricao": "Procedimento de apresentação da dívida do cartão — Banco Delta",
+    "texto": "Durante a apresentação da dívida, o operador deve informar de forma clara e objetiva as três informações principais sobre o cartão do cliente. Exemplo de abordagem:\n\n\"(Nome do cliente), o motivo do meu contato hoje é sobre o seu cartão da bandeira X, que venceu em X, e está no valor total de X reais.\"\n\n🔹 Informações obrigatórias a serem apresentadas:\n- Bandeira do cartão;\n- Tempo em atraso (dias em atraso ou data do vencimento);\n- Valor atualizado da dívida.\n\nO operador deve manter um tom cordial e informativo, evitando julgamentos ou interpretações pessoais sobre o débito. Essa etapa é fundamental para contextualizar o cliente e garantir uma negociação transparente."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "negociacao_cartao_fase_1_sondagem",
+    "categoria": "procedimento",
+    "descricao": "Sondagem prévia e conduta de negociação — Cartão Fase I",
+    "texto": "Antes de ofertar qualquer parcelamento, o operador deve realizar uma sondagem prévia com o cliente para identificar a disponibilidade real de pagamento. A abordagem deve ser empática e assertiva, por exemplo:\n\n\"(Nome do cliente), para eu te apresentar uma proposta adequada, gostaria de saber qual valor você teria disponível para pagamento neste momento.\"\n\nCom base na resposta, o operador deve ajustar a negociação, priorizando soluções compatíveis com a condição do cliente. O foco deve ser sempre na recuperação do crédito e na manutenção do relacionamento com o banco."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "negociacao_fatura_fechada",
+    "categoria": "regras",
+    "descricao": "Procedimento de negociação em faturas fechadas — Banco Delta",
+    "texto": "Em casos em que a fatura do cliente já estiver fechada (por EXEMPLO, se a data de corte for dia 18/10 e o contato estiver sendo feito em 18/10), o operador deve aguardar pelo menos 2 a 3 dias após o fechamento da fatura para realizar a negociação.\n\nIsso é necessário porque, se o pagamento for realizado antes ou no mesmo dia do fechamento, ele pode ser registrado como pagamento avulso, impossibilitando a negociação correta no sistema e gerando inconsistências financeiras.\n\n📅 Procedimento recomendado:\n- Sempre verificar a data de corte da fatura.\n- Programar a negociação para ocorrer após o fechamento (mínimo 2 dias depois).\n- Em caso de proximidade com o fechamento (ex: hoje é dia 16/10 e fecha em 18/10), aguardar o fechamento antes de formalizar qualquer proposta.\n\nO operador deve explicar isso ao cliente de forma clara e profissional, garantindo que o pagamento seja processado corretamente pelo sistema do Banco Delta."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "argumentacao_fechamento_acordo",
+    "categoria": "argumentacao",
+    "descricao": "Técnicas de argumentação para fechamento de acordo — Banco Delta",
+    "texto": "Durante a ligação, o operador deve utilizar uma argumentação clara e estratégica para conduzir o cliente ao fechamento do acordo. O foco deve ser destacar os benefícios, explicar as consequências da não negociação e gerar senso de urgência com segurança.\n\n🔹 Benefícios do acordo:\n- Ao formalizar a negociação, os juros, encargos e ligações de cobrança serão paralisados imediatamente.\n- O cartão será desbloqueado, permitindo o uso normal sem restrições.\n\n🔹 Consequências da não negociação:\n- Caso o cliente deixe a dívida em aberto, os juros e encargos continuarão sendo aplicados, aumentando o valor da fatura.\n- O cartão permanecerá bloqueado, impossibilitando o uso.\n- O nome do cliente poderá permanecer com restrição de crédito, dificultando futuras compras ou financiamentos.\n\n🔹 Senso de urgência e segurança:\n- O acordo garante controle e previsibilidade financeira, evitando problemas futuros.\n- A formalização é simples, rápida e segura, podendo ser concluída durante a própria ligação.\n\n🔹 Pergunta de fechamento suave:\nApós apresentar os benefícios e consequências, finalize com uma pergunta que estimule a decisão:\n\"Diante de tudo isso, podemos formalizar o acordo agora mesmo e garantir a tranquilidade com seu cartão e fatura?\""
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "treinamento_ratificacao",
+    "categoria": "procedimento",
+    "descricao": "Procedimento de ratificação e orientações de pagamento — Banco Delta",
+    "texto": "Durante a ratificação do acordo, o operador deve reforçar a importância do pagamento correto e orientar o cliente quanto às formas de recebimento e segurança do boleto.\n\n🔹 Reforço sobre o valor exato:\n- O pagamento deve ser realizado com o valor exato, incluindo os centavos, para que o sistema registre corretamente. Exemplo: se o valor da fatura total for R$ 115,50, o pagamento de R$ 115,49 será registrado como pagamento avulso.\n- Se o pagamento for referente ao valor mínimo (exemplo: fatura total de R$ 1.000,00 e mínimo de R$ 650,55), o operador deve reforçar que o cliente deve pagar exatamente o valor acordado do mínimo.\n\n🔹 Envio e segurança do boleto:\n- Informar que o código de barras do boleto será enviado via SMS e e-mail.\n- Caso o boleto recebido por e-mail solicite senha, a senha será composta por 5 dígitos: os dois do dia de nascimento + os três primeiros dígitos do CPF. Exemplo: nascimento 10/08/1999 e CPF 111.222.333-44 → senha: 10111.\n\n🔹 Confirmação de recebimento:\n- Confirmar com o cliente se o boleto e o código de barras foram recebidos via SMS e e-mail.\n\n🔹 Formas de pagamento disponíveis:\n- Internet Banking;\n- Lotéricas;\n- Aplicativo bancário;\n- Agências bancárias Delta.\n\nO operador deve se certificar de que o cliente compreendeu todas as instruções e reforçar o compromisso de realizar o pagamento dentro do prazo acordado."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "consequencias_negociacao",
+    "categoria": "regras",
+    "descricao": "Consequências do sucesso ou insucesso na negociação — Banco Delta",
+    "texto": "Durante o atendimento, o operador deve esclarecer de forma clara as consequências do sucesso ou insucesso na negociação, garantindo que o cliente compreenda os efeitos de sua decisão.\n\n🔹 Em caso de sucesso (acordo formalizado):\n- As ligações de cobrança e os juros serão paralisados imediatamente.\n- O cartão será desbloqueado para uso normal.\n\n🔹 Em caso de insucesso (recusa do acordo):\n- As ligações de cobrança permanecem ativas.\n- Juros e encargos continuam sendo aplicados sobre o saldo devedor.\n- O cartão permanece bloqueado para uso.\n\nO operador deve comunicar essas informações de forma empática e objetiva, reforçando a importância da formalização do acordo para restabelecer o uso do cartão e evitar aumento da dívida."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "atualizacao_cadastral",
+    "categoria": "procedimento",
+    "descricao": "Procedimento de atualização cadastral — Banco Delta",
+    "texto": "Durante a negociação, o operador deve realizar a atualização cadastral do cliente, garantindo que as informações de contato estejam corretas e atualizadas.\n\n🔹 Itens obrigatórios a confirmar:\n- E-mail atualizado;\n- Número de telefone celular válido.\n\nEssa confirmação assegura que o cliente receba corretamente os boletos, códigos de barras e demais comunicações do Banco Delta. O operador deve realizar essa etapa antes do encerramento da ligação para garantir que todas as comunicações sejam entregues com sucesso."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "regras_negociacao_cartao",
+    "categoria": "regras",
+    "descricao": "Regras gerais de negociação e cronograma de atrasos — Banco Delta",
+    "texto": "As negociações devem seguir o cronograma operacional do Banco Delta, respeitando os prazos de atraso e as restrições de cada fase.\n\n🔹 Contratos com menos de 89 dias:\n- Negociação via plataforma Delta (Citrix).\n\n🔹 Cronograma de atraso do cartão:\n- 6 dias = Ligações de cobrança.\n- 8 dias = Bloqueio do cartão.\n- 15 dias = Inclusão do nome no SPC/SERASA.\n- 90 dias = Cancelamento definitivo do cartão.\n\nO operador deve se atentar a essas datas para orientar corretamente o cliente, evitando informações incorretas sobre bloqueio ou cancelamento. Qualquer exceção deve ser validada com a supervisão antes da confirmação ao cliente."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "treinamento_encerramento",
+    "categoria": "script",
+    "descricao": "Roteiro de encerramento da ligação e canais de atendimento — Banco Delta",
+    "texto": "Ao encerrar a ligação, o operador deve finalizar de forma cordial, agradecendo a atenção do cliente e desejando um ótimo dia, tarde ou noite, conforme o horário do atendimento.\n\n🔹 Frase de encerramento sugerida:\n\"Agradeço a sua atenção, (nome do cliente). Foi um prazer falar com você. Tenha um ótimo dia/tarde/noite!\"\n\n🔹 Canais oficiais de atendimento do Banco Delta:\n- SAC Banco Delta: 0800 727 0000\n- Atendimento Online / Site: www.delta.com.br\n- Ouvidoria: 0800 727 0303\n- Agências físicas: consultar no site para localizar a unidade mais próxima.\n\nO operador deve garantir que o cliente saiba onde buscar suporte adicional, especialmente em casos de dúvidas sobre o boleto, vencimento ou andamento da negociação."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "cartao_fase_2",
+    "categoria": "regras",
+    "descricao": "Procedimento de negociação do Cartão Fase II — Banco Delta",
+    "texto": "Os contratos classificados como Cartão Fase II referem-se a clientes com mais de 90 dias de atraso, cuja negociação deve ser realizada via plataforma CollectSys. O operador deve conduzir a negociação de forma gradativa, priorizando a regularização do débito e o restabelecimento da relação do cliente com o banco.\n\n🔹 Diretrizes gerais de negociação:\n- Iniciar a abordagem oferecendo o pagamento à vista como primeira opção.\n- Caso o cliente apresente objeção, ofertar o parcelamento, priorizando condições que favoreçam a quitação do débito.\n- Quando houver entrada e parcelas, sempre oferecer uma entrada maior, destacando os benefícios dessa condição.\n\n🔹 Durante a formalização do acordo, informar ao cliente que:\n- A primeira parcela será encaminhada via e-mail e SMS;\n- As demais parcelas serão enviadas à residência do cliente em formato de carnê.\n\n🔹 Atualização cadastral obrigatória:\n- É essencial confirmar e atualizar o número de telefone, o e-mail e o endereço do cliente para garantir o correto envio das parcelas e boletos.\n\n🔹 Fase de transição (cartões com 90 a 110 dias de atraso):\n- Nessa faixa de atraso, pode ocorrer instabilidade no sistema devido ao processo de cancelamento do cartão.\n- O operador deve orientar o cliente a aguardar aproximadamente 6 dias para que o processo seja concluído e, então, retornar o contato para realizar a negociação normalmente.\n\n🔹 PESSOA FÍSICA — Abertura de Conta Corrente:\n- Clientes pessoa física podem ter vínculo com conta corrente no Delta; confirmar dados apenas se houver necessidade de atualização cadastral.\n\n🔹 Cronograma de atrasos (Cartão Delta):\n- 6 dias = Ligações de cobrança;\n- 8 dias = Bloqueio do cartão;\n- 15 dias = Inclusão no SPC/SERASA;\n- 90 dias = Cancelamento definitivo do cartão.\n\nO operador deve conduzir todo o atendimento de forma clara, profissional e empática, reforçando que a regularização do débito permite reabilitar o relacionamento do cliente com o banco e restabelecer sua credibilidade financeira."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "emprestimo_massificado",
+    "categoria": "definição",
+    "descricao": "O que é o Empréstimo Massificado — Banco Delta",
+    "texto": "O Empréstimo Massificado é uma modalidade de crédito oferecida pelo Banco Delta, voltada principalmente para aposentados e pensionistas do INSS. Essa linha de crédito se destaca pela facilidade de contratação e pela ampla oferta automatizada, direcionada aos clientes que possuem margem consignável disponível.\n\nO funcionamento é semelhante ao empréstimo consignado tradicional: as parcelas são descontadas diretamente do benefício do INSS, o que reduz significativamente o risco de inadimplência e permite taxas de juros mais baixas em comparação com outras modalidades de crédito pessoal. Esse produto visa proporcionar maior segurança e praticidade ao público 50+, público-alvo do Banco Delta."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "negociacao_emprestimo_massificado",
+    "categoria": "regras",
+    "descricao": "Regras e condições de negociação do Empréstimo Massificado — Banco Delta",
+    "texto": "Durante a negociação de contratos de Empréstimo Massificado, o operador deve seguir as regras operacionais e respeitar os critérios estabelecidos pelo Banco Delta.\n\n🔹 Condições principais:\n- Contratos com até 60 dias de atraso não possuem opção de parcelamento nem de desconto.\n- Parcelamento e desconto são liberados apenas para beneficiários temporários.\n- Parcelamento permitido em até 36 vezes.\n- Régua de negociação: priorizar D+2; com autorização da supervisão, é possível aplicar até D+5.\n- O desconto e o parcelamento máximo variam conforme a faixa de atraso do contrato.\n\n🔹 Orientações adicionais:\n- O operador deve sempre confirmar a situação do benefício (temporário ou permanente) antes de apresentar opções de parcelamento.\n- Em casos de exceção ou dúvidas sobre a faixa de atraso, o operador deve acionar a supervisão para validar a condição comercial.\n- Toda formalização deve ser registrada corretamente no sistema CollectSys, garantindo rastreabilidade e conformidade com as políticas internas do Banco Delta."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "negociacao_gradual",
+    "categoria": "regras",
+    "descricao": "Procedimento de negociação gradual (cascata de negociação) — Banco Delta",
+    "texto": "O processo de negociação do Banco Delta deve ser conduzido de forma gradual, seguindo a cascata de negociação estabelecida pela instituição. O operador deve apresentar as opções de forma progressiva, buscando sempre a alternativa mais vantajosa para o cliente e para o banco.\n\n🔹 Cascata de negociação:\n1️⃣ QUILTAÇÃO — Pagamento total do débito.\n2️⃣ REGULARIZAÇÃO DE PARCELAS — Pagamento das parcelas em atraso, podendo ser total ou parcial.\n3️⃣ PARCELAMENTO — Disponível apenas para contratos com 61 dias ou mais de atraso.\n4️⃣ DELTA FACILITA — Aplicável conforme as regras específicas do programa.\n\n🔹 Orientações importantes:\n- É fundamental realizar a atualização cadastral completa, confirmando e registrando o número de telefone, e-mail e endereço residencial do cliente para garantir o correto envio dos boletos e comunicações.\n- Nos casos de negociação via Delta Facilita, o cliente deve ser informado de que o INSS realizará uma análise do acordo e que o prazo para resposta é de até 5 dias úteis.\n\nO operador deve sempre manter um tom profissional, explicar cada opção com clareza e destacar os benefícios da regularização imediata para evitar acréscimos e restrições futuras."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "delta_facilita",
+    "categoria": "programa",
+    "descricao": "Programa Delta Facilita — Condições e procedimentos de negociação",
+    "texto": "O Delta Facilita é um programa especial de negociação criado pelo Banco Delta para beneficiários permanentes inativos, com o objetivo de facilitar a regularização de débitos e permitir o retorno do cliente ao relacionamento ativo com o banco.\n\n🔹 Público-alvo:\n- Beneficiários permanentes do INSS que possuem contrato inativo no Banco Delta.\n- Clientes que desejam restabelecer o vínculo com o banco, mediante condições especiais de pagamento.\n\n🔹 Condições gerais de negociação:\n- O programa é aplicado para contratos com 61 dias ou mais de atraso.\n- Acima de 180 dias de atraso, a oferta do Delta Facilita só deve ser apresentada se o cliente manifestar interesse em retornar para o banco.\n- Não há valor de entrada: a primeira parcela pode ser paga em até 60 dias após a formalização do acordo.\n- O parcelamento segue as condições do programa e deve ser confirmado diretamente no sistema do Delta.\n\n🔹 Procedimentos operacionais:\n- O operador deve realizar a atualização cadastral completa, confirmando telefone, e-mail e endereço residencial do cliente para garantir o envio correto dos boletos e comunicações.\n- Caso o cliente deseje receber o benefício em outra instituição, deve ser informado que o Banco Delta realizará a transferência recorrente (TED Recorrente) para a conta indicada.\n\n🔹 Observações obrigatórias:\n- Informar ao cliente que o INSS realizará a análise do acordo e que o prazo para retorno é de até 5 dias úteis.\n- Se o cliente aceitar a proposta, o operador deve obrigatoriamente informar a fraseologia padronizada presente no sistema antes de concluir a formalização.\n\nO operador deve conduzir o atendimento com clareza e empatia, reforçando que o Delta Facilita é uma oportunidade de reorganização financeira e reativação do relacionamento com o banco, com segurança e transparência."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "delta_facilita",
+    "categoria": "benefícios",
+    "descricao": "Principais benefícios do programa Delta Facilita para o cliente",
+    "texto": "O Delta Facilita oferece condições exclusivas e vantajosas para clientes que desejam regularizar seu débito e voltar a receber o benefício diretamente pelo Banco Delta. Abaixo estão os principais benefícios do programa:\n\n✅ **Taxas de juros reduzidas:** As taxas de renegociação são atualizadas com percentuais significativamente menores em relação às condições anteriores, tornando o pagamento mais acessível.\n\n✅ **Parcelas menores:** O valor mensal das parcelas renegociadas é inferior ao valor que o cliente pagava anteriormente, facilitando a manutenção do acordo.\n\n✅ **Carência de 60 dias:** A primeira parcela pode ser paga em até 60 dias após a formalização da negociação, proporcionando fôlego financeiro ao cliente.\n\n✅ **Saída imediata da negativação:** O CPF do cliente é retirado dos órgãos de proteção ao crédito (SPC/Serasa) no prazo de até 5 dias úteis após o acordo.\n\n✅ **Retorno do benefício ao Banco Delta:** O cliente volta a receber o pagamento do benefício do INSS diretamente em sua conta no Banco Delta, de forma segura e contínua.\n\n✅ **Desconto automático do benefício:** O cliente não precisa se preocupar com boletos ou prazos de pagamento, pois o valor da parcela é debitado automaticamente do benefício mensal, garantindo pontualidade e evitando esquecimentos.\n\nEsses benefícios tornam o Delta Facilita uma opção segura e conveniente, tanto para o cliente quanto para o operador que realiza a negociação."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "delta_facilita",
+    "categoria": "benefícios",
+    "descricao": "Principais benefícios do programa Delta Facilita para o cliente",
+    "texto": "O Delta Facilita oferece condições exclusivas e vantajosas para clientes que desejam regularizar seu débito e voltar a receber o benefício diretamente pelo Banco Delta. Abaixo estão os principais benefícios do programa:\n\n✅ **Taxas de juros reduzidas:** As taxas de renegociação são atualizadas com percentuais significativamente menores em relação às condições anteriores, tornando o pagamento mais acessível.\n\n✅ **Parcelas menores:** O valor mensal das parcelas renegociadas é inferior ao valor que o cliente pagava anteriormente, facilitando a manutenção do acordo.\n\n✅ **Carência de 60 dias:** A primeira parcela pode ser paga em até 60 dias após a formalização da negociação, proporcionando fôlego financeiro ao cliente.\n\n✅ **Saída imediata da negativação:** O CPF do cliente é retirado dos órgãos de proteção ao crédito (SPC/Serasa) no prazo de até 5 dias úteis após o acordo.\n\n✅ **Retorno do benefício ao Banco Delta:** O cliente volta a receber o pagamento do benefício do INSS diretamente em sua conta no Banco Delta, de forma segura e contínua.\n\n✅ **Desconto automático do benefício:** O cliente não precisa se preocupar com boletos ou prazos de pagamento, pois o valor da parcela é debitado automaticamente do benefício mensal, garantindo pontualidade e evitando esquecimentos.\n\nEsses benefícios tornam o Delta Facilita uma opção segura e conveniente, tanto para o cliente quanto para o operador que realiza a negociação."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "delta_facilita",
+    "categoria": "regras",
+    "descricao": "Cascata de negociação e aplicação do Cash Back na campanha Delta Facilita",
+    "sinonimos": [
+      "cashback",
+      "cash back",
+      "cascata",
+      "sequência de ofertas",
+      "ordem de negociação",
+      "ofertar cashback"
+    ],
+    "texto": "A sequência de ofertas (cascata) do programa Delta Facilita deve seguir rigorosamente a ordem abaixo:\n\n1️⃣ **Delta Facilita**\n2️⃣ **Delta Facilita com Cash Back de 30%**\n3️⃣ **Delta Facilita com Cash Back de 50%**\n4️⃣ **Negociações disponíveis no CollectSys**\n\n⚙️ **Regra importante:**\n- Se o Delta Facilita for feito em **até 18 parcelas**, o **Cash Back será aplicado em todas as parcelas**.\n- Se o Delta Facilita for feito em **mais de 18 parcelas**, o **Cash Back será aplicado apenas nas 12 primeiras parcelas**.\n\n💡 Observação: A utilização incorreta da cascata — como ofertar Cash Back de 50% antes de 30%, ou pular etapas — **invalida a contabilização para a campanha**. É obrigatório registrar corretamente a ocorrência (Facilita, Turbo30 ou Turbo50) no CRM para que a negociação seja válida e pontuada."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "delta_facilita",
+    "categoria": "benefício",
+    "descricao": "Funcionamento e forma correta de explicar o Cash Back do Delta Facilita",
+    "sinonimos": [
+      "cash back",
+      "cashback",
+      "benefício de retorno",
+      "oferta de cashback"
+    ],
+    "texto": "O Cash Back é um benefício adicional do programa Delta Facilita, que recompensa o cliente com o retorno de parte do valor pago nas parcelas do acordo. Ele é oferecido de forma progressiva, conforme a fase da cascata de negociação.\n\n💬 **Como apresentar ao cliente:**\n\"Seu acordo pode ser feito com o Delta Facilita tradicional, ou com a opção de Cash Back, que devolve uma parte do valor pago em cada parcela, reduzindo o custo total da renegociação.\"\n\n💬 **Regras de aplicação:**\n- Se o acordo for feito em **até 18 parcelas**, o Cash Back será aplicado em **todas as parcelas**.\n- Se o acordo for feito em **mais de 18 parcelas**, o Cash Back será aplicado **somente nas 12 primeiras parcelas**.\n\n💬 **Como o operador deve conduzir a oferta:**\n1️⃣ Apresentar primeiro o Delta Facilita tradicional.\n2️⃣ Se o cliente demonstrar dúvida ou dificuldade, oferecer o **Facilita com Cash Back de 30%**.\n3️⃣ Caso ainda não haja aceite, apresentar o **Facilita com Cash Back de 50%** como última opção.\n\n💡 **Importante:** O Cash Back deve ser sempre ofertado dentro da cascata correta e registrado no CRM (Facilita, Turbo30, Turbo50). A ordem incorreta de oferta ou ausência de marcação invalida a contabilização para a campanha."
+  },
+
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "regras_parcelamento_geral",
+    "categoria": "referência",
+    "descricao": "Limites e condições de parcelamento por produto — Banco Delta",
+    "texto": "Cada produto do Banco Delta possui regras específicas de parcelamento e condições de negociação. Abaixo estão os limites e particularidades que devem ser observados:\n\n📘 CARTÃO FASE I:\n- Parcelamento em até **12 vezes**.\n- Negociação realizada exclusivamente pelo portal do Banco Delta.\n- Sem descontos automáticos.\n\n📗 CARTÃO FASE II:\n- Parcelamento em até **24 vezes**, conforme autorização do sistema CollectSys.\n- Primeira parcela enviada por SMS/e-mail; demais via carnê para o endereço do cliente.\n\n📙 EMPRÉSTIMO MASSIFICADO:\n- Parcelamento em até **36 vezes**.\n- Disponível apenas para beneficiários temporários.\n- Contratos com até 60 dias de atraso não possuem desconto nem parcelamento.\n\n📒 DELTA FACILITA:\n- Sem valor de entrada.\n- Primeira parcela pode ser paga em até **60 dias**.\n- Aplicado apenas a benefícios permanentes inativos.\n\nEssas condições devem sempre ser verificadas no sistema antes da formalização, pois podem variar conforme a política vigente ou faixa de atraso. A Aurora deve explicar essas diferenças claramente quando o operador perguntar, indicando sempre a fonte oficial (regras da carteira)."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "campanha_facilita",
+    "categoria": "campanha",
+    "descricao": "Objetivo da Campanha Facilita — Banco Delta",
+    "texto": "A Campanha Facilita tem como objetivo estimular o retorno do pagamento do benefício INSS de clientes ao Banco Delta, por meio de novas ofertas do programa Facilita. A ação premiará os operadores com maior produção diária e com melhor desempenho consolidado durante o período da campanha. Essa iniciativa visa aumentar a base de clientes ativos com débito em conta e promover o engajamento da equipe de cobrança."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "campanha_facilita_regras",
+    "categoria": "regras",
+    "descricao": "Regras gerais e funcionamento da Campanha Facilita",
+    "texto": "🔹 **Resultados válidos:** Todos os acordos formalizados durante o período da campanha contarão para o atingimento das metas da carteira, incluindo os acordos realizados através do Facilita Turbo.\n\n🔹 **Segmentação obrigatória:**\n- Facilita\n- Facilita Turbo30\n- Facilita Turbo50\n\nO operador deve obrigatoriamente marcar corretamente a ocorrência no CRM conforme o tipo de Facilita utilizado. A ausência de marcação ou marcação incorreta resultará na **não contabilização do acordo** para a campanha.\n\n🔹 **Cascata de ofertas:** A sequência correta deve ser seguida sempre: Facilita → Facilita Turbo30 → Facilita Turbo50. A utilização incorreta dessa ordem poderá gerar **exclusão do acordo da campanha**.\n\n🔹 **Produtos elegíveis:**\n- Débito em Conta de Beneficiários do INSS.\n\n🔹 **Aging elegível:**\n- Contratos com **01 a 180 dias** de atraso.\n\n🔹 **Vigência da campanha:**\n- De **23/10/2025 a 31/10/2025**.\n\n🔹 **Ferramenta oficial de validação:**\n- Dashboard de Acordos — nenhuma outra ferramenta, planilha ou relatório será considerado para a contabilização oficial."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "campanha_facilita_premiacao",
+    "categoria": "premiação",
+    "descricao": "Regras de premiação e distribuição do orçamento da Campanha Facilita",
+    "texto": "🔹 **Orçamento total da campanha:** R$ 6.000,00 (seis mil reais).\n\n🔹 **Distribuição do budget:**\n- **Premiação diária:** Valor variável conforme desempenho individual do operador.\n- **Premiação do período:** Valor consolidado para os operadores com melhor resultado acumulado durante toda a campanha.\n\n🔹 **Forma de pagamento:**\nO valor da premiação será repassado **junto ao pagamento da nota do Banco Delta**.\n\n🔹 **Critério de validação:**\nSomente acordos válidos e devidamente marcados no CRM serão contabilizados. O Dashboard de Acordos é a única ferramenta oficial para aferição dos resultados e validação da produção dos operadores.\n\n🔹 **Importante:**\nA produção registrada fora do período de vigência ou sem marcação correta será automaticamente desconsiderada para efeitos de premiação."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "campanha_facilita_exclusoes",
+    "categoria": "restrições",
+    "descricao": "Produtos e operações excluídos da Campanha Facilita",
+    "texto": "Os seguintes produtos e operações **não participarão da Campanha Facilita**:\n\n❌ Produto de Consignado Privado.\n❌ Produto de Cartão de Crédito.\n❌ Células de atendimento voltadas ao Consignado Privado e Cartão de Crédito.\n❌ Qualquer outro produto diferente de Débito em Conta de Beneficiário.\n\nSomente os acordos vinculados ao produto **Débito em Conta Beneficiário** serão considerados elegíveis para pontuação e premiação."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "campanha_facilita_resumo",
+    "categoria": "procedimento",
+    "descricao": "Resumo operacional para marcação e execução da Campanha Facilita",
+    "texto": "Para que o acordo seja contabilizado corretamente na Campanha Facilita, o operador deve seguir o fluxo padrão abaixo:\n\n1️⃣ Identificar o cliente elegível (Débito em Conta — INSS, de 1 a 180 dias de atraso).\n2️⃣ Ofertar a negociação conforme a cascata oficial (Facilita → Facilita Turbo30 → Facilita Turbo50).\n3️⃣ Registrar corretamente a ocorrência no CRM com a opção exata do tipo de Facilita utilizado.\n4️⃣ Confirmar que a marcação foi salva antes de finalizar a negociação.\n5️⃣ Validar o registro posteriormente no Dashboard de Acordos.\n\n⚠️ A não marcação, marcação incorreta ou desrespeito à sequência de ofertas poderá desqualificar o acordo da campanha.\n\n💡 Dica da Aurora: Sempre confirme com o supervisor se o acordo foi registrado corretamente no CRM e acompanhe sua posição no ranking diário e consolidado da campanha."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "campanha_facilita_premiacao_diaria",
+    "categoria": "premiação",
+    "descricao": "Premiação diária da Campanha Facilita — Ranking dos 3 agentes com maior número de Facilitas realizados",
+    "texto": "A Campanha Facilita prevê premiação diária para os 3 agentes com maior volume de Facilitas realizados no dia. A pontuação é calculada com base na quantidade total de acordos formalizados e devidamente registrados no CRM.\n\n🏆 **Premiação Diária:**\n- 1º lugar: R$ 214,00 por dia\n- 2º lugar: R$ 129,00 por dia\n- 3º lugar: R$ 86,00 por dia\n\n📆 **Período de apuração:** De 23/10 a 31/10/2025.\n\n💰 **Total diário distribuído:** R$ 429,00\n💰 **Total acumulado da premiação diária (7 dias):** R$ 3.000,00\n\nOs valores são somados ao final de cada dia e pagos junto à nota do Banco Delta. Para contabilização válida, a marcação correta do tipo de Facilita (Facilita, Facilita Turbo30 ou Facilita Turbo50) é obrigatória no CRM."
+  },
+  {
+    "carteira": "BANCO DELTA",
+    "produto": "campanha_facilita_premiacao_periodo",
+    "categoria": "premiação",
+    "descricao": "Premiação final consolidada da Campanha Facilita — Ranking geral dos 3 agentes com maior produção no período",
+    "texto": "Ao término da Campanha Facilita, será realizada a premiação consolidada do período, reconhecendo os 3 agentes com melhor desempenho total entre os dias 23/10 e 31/10/2025.\n\n🏆 **Premiação do Período:**\n- 1º lugar: R$ 1.500,00\n- 2º lugar: R$ 900,00\n- 3º lugar: R$ 600,00\n\n💰 **Total geral da premiação consolidada:** R$ 3.000,00\n\nA classificação final será apurada através do Dashboard de Acordos, considerando apenas os registros válidos e corretamente marcados no CRM. Resultados duplicados, marcações incorretas ou ocorrências fora da vigência da campanha não serão considerados.\n\nA soma das premiações diárias (R$ 3.000,00) e da premiação final (R$ 3.000,00) totaliza o **budget oficial de R$ 6.000,00** previsto para a campanha."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "consignado_privado_definicao",
+    "categoria": "definicao",
+    "descricao": "O que é o crédito consignado privado — Banco GAMA",
+    "texto": "O crédito consignado privado é uma modalidade de empréstimo destinada a trabalhadores do setor privado com carteira assinada (CLT). Possui taxas de juros competitivas em relação a outros créditos pessoais e não depende de vínculo bancário tradicional para contratação. O processo de simulação e contratação é realizado por meio do aplicativo CTPS Digital, com desconto direto das parcelas na folha de pagamento do funcionário."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "consignado_privado_funcionamento",
+    "categoria": "informativo",
+    "descricao": "Funcionamento da liberação do crédito consignado privado — Banco GAMA",
+    "texto": "O funcionário solicita o empréstimo ao Banco GAMA e a liberação do recurso depende da autorização do empregador, mediante disponibilidade de margem consignável. A margem consignável corresponde ao limite máximo de desconto permitido sobre a remuneração do colaborador para pagamento de empréstimos consignados."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "consignado_privado_atraso",
+    "categoria": "informativo",
+    "descricao": "Motivos de atraso no consignado privado — Banco GAMA",
+    "texto": "O consignado privado pode entrar em atraso quando o desconto não ocorre ou quando o valor descontado não é repassado ao banco. Situações comuns incluem demissão, desligamento voluntário, afastamento por doenças, acidente de trabalho, licença maternidade ou falha no repasse da empresa ao Banco."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "consignado_privado_consequencias",
+    "categoria": "regras",
+    "descricao": "Consequências do atraso no consignado privado — Banco GAMA",
+    "texto": "O atraso no pagamento do consignado privado pode gerar: aumento da dívida com juros e multa; desconto dos valores pendentes nas verbas rescisórias em caso de demissão; vinculação da dívida ao eSocial, com retomada automática dos descontos quando houver novo vínculo CLT; e negativação do CPF nos órgãos de proteção ao crédito."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "treinamento_abertura",
+    "categoria": "script",
+    "descricao": "Roteiro de abertura da ligação — Consignado Privado Banco GAMA",
+    "texto": "Oi (primeiro nome do cliente)? Bom dia (nome completo do cliente). Eu me chamo (primeiro nome do negociador), falo da empresa (xxx) e represento o Banco GAMA. Por gentileza, me confirme os três primeiros números do seu CPF, pois tenho informações importantes para lhe passar."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "treinamento_apresentacao_divida",
+    "categoria": "script",
+    "descricao": "Apresentação da dívida do consignado privado — Banco GAMA",
+    "texto": "Estou te ligando para informar que o seu contrato de Empréstimo Consignado Privado possui (xx) parcelas em atraso há (xx) dias. O valor atualizado do débito é de R$ (xx). Podemos emitir o boleto para regularização ainda hoje?"
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "argumentacao_situacoes_comuns",
+    "categoria": "argumentacao",
+    "descricao": "Respostas padrão para situações comuns — Consignado Privado Banco GAMA",
+    "texto": "Se o cliente informar que foi demitido ou solicitou desligamento: orientar que os pagamentos passam a ocorrer via boleto mensalmente até novo vínculo CLT. Se o cliente estiver afastado pelo INSS ou em licença maternidade: informar que o pagamento deve ser feito via boleto até o retorno às atividades. Se o cliente alegar que o desconto ocorreu em folha: esclarecer que o repasse não foi realizado ao banco e que a regularização deve ser feita via boleto pelo cliente ou RH. Se o cliente não identificou o desconto: orientar a verificar com a empresa, reforçando que a parcela em atraso precisa ser regularizada via boleto."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "negociacao_cascata",
+    "categoria": "procedimento",
+    "descricao": "Cascata de negociação — Consignado Privado Banco GAMA",
+    "texto": "A negociação deve seguir a seguinte ordem: 1) Quitação total do contrato, com aplicação da política de descontos vigente; 2) Pagamento das parcelas em atraso, podendo ser total ou parcial. Em ambos os casos, o boleto deve ser enviado por e-mail e por linha digitável."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "pos_pagamento",
+    "categoria": "informativo",
+    "descricao": "Procedimentos após pagamento — Consignado Privado Banco GAMA",
+    "texto": "Após a quitação total, é realizada a baixa completa da operação. Após o pagamento de parcelas em atraso, ocorre a baixa das parcelas pagas e as demais continuam com vencimento conforme o cronograma original do contrato."
+  },
+  {
+    "carteira": "BANCO GAMA",
+    "produto": "responsabilidade_empresa",
+    "categoria": "regras",
+    "descricao": "Responsabilidade da empresa no consignado privado — Banco GAMA",
+    "texto": "A empresa é responsável pelo desconto da parcela em folha e pelo repasse ao banco. Contudo, quando não ocorre o desconto ou o repasse, o cliente deve realizar a regularização via boleto bancário para retirada da negativação e paralisação de juros."
+  }
+]

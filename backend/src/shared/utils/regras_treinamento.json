@@ -1,0 +1,121 @@
+
+[
+    {
+        "carteira": "BANCOALFA FIXA",
+        "regras": [
+        {
+            "descricao": "Negocie apenas faturas atuais e em atraso. Nunca inclua faturas futuras, pois isso gera confusão e quebra o padrão do banco.",
+            "categoria": "escopo",
+            "impacto": "Evita comprometer valores ainda não lançados e garante que o acordo seja válido.",
+            "exemplo_correto": "Vamos negociar apenas o saldo que está em atraso neste momento, tudo bem?",
+            "exemplo_incorreto": "Posso já incluir as próximas faturas pra fechar tudo agora?",
+            "peso": 3
+        },
+        {
+            "descricao": "Parcelamento máximo permitido é de 24x.",
+            "categoria": "financeiro",
+            "peso": 3,
+            "tipo_regra": "parcelamento_maximo",
+            "valor_limite": 24,
+            "comparador": "<=",
+            "mensagem_erro": "Proposta ultrapassa o limite máximo de 24 parcelas permitido para a carteira BancoAlfa."
+        },
+        {
+            "descricao": "Não ofereça descontos no valor da dívida. O BancoAlfa não autoriza reduções — o valor integral deve ser pago via quitação ou parcelamento.",
+            "categoria": "proibicao",
+            "impacto": "Oferecer desconto é violação grave de política financeira.",
+            "exemplo_correto": "Consigo ajustar o parcelamento pra caber no seu orçamento, mas o valor total continua o mesmo, tudo bem?",
+            "exemplo_incorreto": "Posso fazer pra você por 600 em vez de 1200, ok?",
+            "peso": 3
+        },
+        {
+            "descricao": "A régua de negociação padrão é D+2 (ou D+6 com autorização da supervisão). Isso define o prazo máximo para vencimento.",
+            "categoria": "procedimento",
+            "impacto": "Evita acordos com prazos fora da política do banco.",
+            "exemplo_correto": "Consigo gerar o boleto pra daqui a dois dias úteis, pode ser?",
+            "exemplo_incorreto": "Posso deixar pra 10 dias, sem problema.",
+            "peso": 2
+        },
+        {
+            "descricao": "A taxa de IOF deve ser cobrada apenas na primeira parcela.",
+            "categoria": "financeiro",
+            "impacto": "Garante conformidade tributária e transparência com o cliente.",
+            "exemplo_correto": "Na primeira parcela incide o IOF, mas nas demais não.",
+            "exemplo_incorreto": "O IOF será cobrado em todas as parcelas.",
+            "peso": 2
+        },
+        {
+            "descricao": "Confirme data de vencimento, valor de entrada e parcelas antes de finalizar o acordo.",
+            "categoria": "fechamento",
+            "impacto": "Evita erros e reforça clareza no fechamento.",
+            "exemplo_correto": "Então só pra confirmar: entrada de R$300 e mais 2x de R$450, vencendo todo dia 10, certo?",
+            "exemplo_incorreto": "Beleza, vou gerar aqui então.",
+            "peso": 3
+        },
+        {
+            "descricao": "Confirme a certeza de pagamento somente após o aceite do cliente.",
+            "categoria": "fechamento",
+            "impacto": "Evita parecer pressão e mantém naturalidade no fechamento.",
+            "exemplo_correto": "Perfeito, então posso contar com esse pagamento ainda hoje?",
+            "exemplo_incorreto": "Você vai pagar hoje, né?",
+            "peso": 3
+        },
+        {
+            "descricao": "Se o cliente optar por pagar via aplicativo (APP), confirme valor e data e registre como 'Acordo via APP'.",
+            "categoria": "procedimento",
+            "impacto": "Garante rastreabilidade e segurança operacional.",
+            "exemplo_correto": "Perfeito, então será pelo app. Pode me confirmar o valor e a data?",
+            "exemplo_incorreto": "Beleza, paga no app e depois eu vejo aqui.",
+            "peso": 2
+        },
+        {
+            "descricao": "Caso o pagamento seja via boleto, confirme e-mail ou telefone antes do envio.",
+            "categoria": "procedimento",
+            "impacto": "Evita envio incorreto e falhas no fechamento.",
+            "exemplo_correto": "Posso confirmar seu e-mail pra envio do boleto?",
+            "exemplo_incorreto": "Vou mandar o boleto pra você.",
+            "peso": 2
+        },
+        {
+            "descricao": "Nunca ofereça benefícios inexistentes, como aumento de limite ou crédito novo. Isso fere a política do banco e pode ser considerado promessa enganosa.",
+            "categoria": "proibicao",
+            "impacto": "Evita falsas expectativas e mantém a credibilidade da instituição.",
+            "exemplo_correto": "Após o pagamento, o sistema atualiza automaticamente seu status.",
+            "exemplo_incorreto": "Pagando hoje, já te libero mais limite no cartão.",
+            "peso": 3
+        },
+        {
+            "descricao": "Explique as consequências do não pagamento de forma clara, sem ameaças.",
+            "categoria": "comunicacao",
+            "impacto": "Mantém ética e profissionalismo durante a cobrança.",
+            "exemplo_correto": "Se o pagamento não ocorrer, o débito pode continuar impactando seu limite de crédito.",
+            "exemplo_incorreto": "Se não pagar, seu nome vai pro SPC amanhã.",
+            "peso": 2
+        },
+        {
+            "descricao": "Priorize o pagamento à vista na primeira tentativa, mas adeque conforme a capacidade do cliente.",
+            "categoria": "financeiro",
+            "impacto": "Mostra assertividade sem desrespeitar o limite do cliente.",
+            "exemplo_correto": "Se você conseguir quitar à vista, zera tudo agora. Mas se preferir, vemos um parcelamento.",
+            "exemplo_incorreto": "Tem que pagar à vista, senão não dá pra resolver.",
+            "peso": 2
+        },
+        {
+            "descricao": "Não aceite respostas vagas como 'vou pensar' ou 'me manda o boleto pra ver' como fechamento.",
+            "categoria": "fechamento",
+            "impacto": "Evita falso fechamento e garante clareza no encerramento.",
+            "exemplo_correto": "Entendo, mas posso contar com o pagamento hoje?",
+            "exemplo_incorreto": "Ok, te mando o boleto pra ver.",
+            "peso": 3
+        },
+        {
+            "descricao": "Finalize sempre de forma cordial, com tom positivo e empático.",
+            "categoria": "conduta",
+            "impacto": "Garante uma boa experiência final e imagem positiva.",
+            "exemplo_correto": "Agradeço pelo seu tempo, Carlos. Tenha um ótimo dia!",
+            "exemplo_incorreto": "Tá bom, tchau.",
+            "peso": 1
+        }
+        ]
+    }
+]

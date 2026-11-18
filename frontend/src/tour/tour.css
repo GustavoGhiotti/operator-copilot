@@ -1,0 +1,400 @@
+/**
+ * Tema do tour — a mesma superfície holográfica do resto do Copilot.
+ *
+ * Nada aqui é invenção nova: as cantoneiras de 84px, as scanlines, a varredura
+ * animada, a paleta e as fontes vêm de `.copilot-command-panel` / `.copilot-
+ * quick-menu` em `index.css`. O card do tour flutua sobre a paleta de comandos,
+ * então parecer outra coisa é o que fazia ele destoar. As animações
+ * `copilot-login-scan` e `copilot-login-micro-flicker` são globais e estão
+ * declaradas lá.
+ *
+ * z-index: o app vai até z-[9999] (e o @Tarefas fica em z-[70]). O Shepherd
+ * monta no body, então precisa ficar acima de tudo isso — daí os 10040/10050.
+ *
+ * Cuidado ao mexer no cabeçalho: `.shepherd-title` é `display: flex` no CSS
+ * base, então pseudo-elemento ali vira item de flex e senta ao LADO do texto.
+ * Por isso o motor monta `.tour-copilot__etapa` e `__titulo` como spans reais,
+ * e aqui o title volta a ser `block`.
+ */
+
+.shepherd-modal-overlay-container {
+  z-index: 10040;
+  opacity: 0.84;
+}
+
+.shepherd-element {
+  z-index: 10050;
+}
+
+/* ------------------------------------------------------------ superfície -- */
+
+.tour-copilot.shepherd-element {
+  width: 25.5rem;
+  max-width: calc(100vw - 2rem);
+  border: 1px solid rgba(102, 173, 239, 0.16);
+  border-radius: 0.9rem;
+  background: transparent;
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.025),
+    0 26px 74px rgba(0, 0, 0, 0.62),
+    0 0 38px rgba(24, 126, 220, 0.16);
+  color: #f8fbff;
+  font-family: "Oxanium", "Poppins", sans-serif;
+  animation: tour-copilot-entrada 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes tour-copilot-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+}
+
+.tour-copilot .shepherd-content {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  /*
+   * Cantoneiras (ciano em cima à esquerda, laranja embaixo à direita) sobre o
+   * corpo escuro. É a assinatura da superfície do Copilot — 64px aqui em vez
+   * dos 84px do painel, proporcional ao card ser menor.
+   */
+  background:
+    linear-gradient(90deg, rgba(78, 184, 255, 0.68), transparent) left top /
+      64px 1px no-repeat,
+    linear-gradient(180deg, rgba(78, 184, 255, 0.68), transparent) left top /
+      1px 64px no-repeat,
+    linear-gradient(270deg, rgba(255, 113, 43, 0.52), transparent) right bottom /
+      64px 1px no-repeat,
+    linear-gradient(0deg, rgba(255, 113, 43, 0.52), transparent) right bottom /
+      1px 64px no-repeat,
+    radial-gradient(circle at 8% 5%, rgba(31, 125, 218, 0.1), transparent 34%),
+    linear-gradient(145deg, rgba(7, 19, 36, 0.94), rgba(1, 7, 17, 0.96));
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+}
+
+/* Scanlines. */
+.tour-copilot .shepherd-content::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(67, 173, 255, 0.055) 4px
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 10%,
+    #000 90%,
+    transparent
+  );
+}
+
+/* Varredura que desce pelo card, igual à do painel de comandos. */
+.tour-copilot .shepherd-content::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 1px;
+  right: 1px;
+  top: 8%;
+  height: 1px;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(69, 185, 255, 0.18),
+    rgba(255, 114, 44, 0.46),
+    transparent
+  );
+  box-shadow: 0 0 18px rgba(53, 165, 255, 0.18);
+  animation: copilot-login-scan 6.5s linear 0.8s infinite;
+}
+
+/* O conteúdo sobe acima das camadas decorativas. */
+.tour-copilot .shepherd-header,
+.tour-copilot .shepherd-text,
+.tour-copilot .shepherd-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------- cabeçalho -- */
+
+/*
+ * Especificidade dobrada de propósito. O CSS base traz
+ * `.shepherd-has-title .shepherd-content .shepherd-header{background:#e6e6e6;
+ * padding:1em}` — três classes. Um seletor de duas classes perde, e o
+ * resultado era um cabeçalho cinza-claro com texto branco em cima (ilegível)
+ * e o padding do Shepherd no lugar do nosso.
+ */
+.tour-copilot.shepherd-has-title .shepherd-content .shepherd-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9rem;
+  padding: 1.4rem 1.4rem 0.95rem;
+  background: transparent;
+  border-radius: 0;
+  line-height: normal;
+}
+
+/* A Aurora no card: é ela quem está falando, então ela aparece. */
+.tour-copilot .shepherd-header::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background-color: rgba(6, 21, 40, 0.92);
+  background-image: url("/images/aurora/aurora-avatar-transparent-300-v1.png");
+  background-repeat: no-repeat;
+  background-size: 145%;
+  background-position: 50% 24%;
+  box-shadow:
+    0 0 0 1px rgba(103, 232, 249, 0.45),
+    0 0 24px rgba(56, 189, 248, 0.3);
+}
+
+/*
+ * Barra de progresso, colada no topo do card. Mora no `::after` do cabeçalho
+ * porque os dois pseudo-elementos do conteúdo já seguram scanline e varredura.
+ * Trilho e preenchimento em um elemento só: duas camadas de background, a de
+ * cima dimensionada pela variável que o motor publica.
+ */
+.tour-copilot .shepherd-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-image:
+    linear-gradient(90deg, #22d3ee, #45b9ff 45%, #ff712b),
+    linear-gradient(rgba(102, 173, 239, 0.16), rgba(102, 173, 239, 0.16));
+  background-size: calc(var(--tour-progresso, 0) * 100%) 100%, 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 14px rgba(53, 165, 255, 0.4);
+  transition: background-size 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-copilot .shepherd-title {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0 1.5rem 0 0;
+  color: #f8fbff;
+}
+
+/* Mesmo tom de "SYSTEM / COMMAND DIRECTORY" da paleta de comandos. */
+.tour-copilot__etapa {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #ff7a32;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  animation: copilot-login-micro-flicker 7s steps(1, end) infinite;
+}
+
+.tour-copilot__titulo {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: 0.005em;
+  color: #ffffff;
+}
+
+/* Mesma disputa de especificidade do cabeçalho — ver comentário acima. */
+.tour-copilot.shepherd-has-title .shepherd-content .shepherd-cancel-icon {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  right: 1.05rem;
+  margin: 0;
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: rgba(174, 202, 231, 0.5);
+  transition: color 0.15s ease;
+}
+
+.tour-copilot.shepherd-has-title .shepherd-content .shepherd-cancel-icon:hover {
+  color: #f8fbff;
+}
+
+/* ------------------------------------------------------------------ texto -- */
+
+.tour-copilot .shepherd-text {
+  /* Alinhado com o título, não com o avatar. */
+  padding: 0.15rem 1.4rem 1.35rem calc(1.4rem + 3rem + 0.9rem);
+  /* Poppins no corpo: Oxanium é de display e cansa em parágrafo. */
+  font-family: "Poppins", sans-serif;
+  font-size: 0.855rem;
+  /* Parágrafo de 3–4 linhas em card estreito precisa de entrelinha larga. */
+  line-height: 1.78;
+  letter-spacing: 0.005em;
+  color: rgba(214, 231, 248, 0.92);
+}
+
+/* Destaque para o nome de um comando ou botão citado no texto. */
+.tour-copilot .shepherd-text b {
+  font-weight: 600;
+  color: #ffa76a;
+}
+
+/* ----------------------------------------------------------------- botões -- */
+
+.tour-copilot .shepherd-footer {
+  gap: 0.55rem;
+  margin: 0 1.35rem;
+  padding: 0.95rem 0 1.2rem;
+  /* Fecha o bloco da explicação antes das ações, como um rodapé de painel. */
+  border-top: 1px solid rgba(102, 173, 239, 0.14);
+}
+
+/* O passo de clique tem só a saída — encostada à esquerda, discreta. */
+.tour-copilot--aguarda-clique .shepherd-footer {
+  justify-content: flex-start;
+}
+
+.tour-copilot__botao.shepherd-button {
+  margin: 0;
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.tour-copilot__botao--principal.shepherd-button {
+  background: linear-gradient(180deg, #ff8f4d, #ff712b);
+  color: #21100a;
+  box-shadow:
+    0 5px 18px -3px rgba(255, 113, 43, 0.5),
+    0 0 22px rgba(255, 113, 43, 0.2);
+}
+
+.tour-copilot__botao--principal.shepherd-button:hover:not(:disabled) {
+  background: linear-gradient(180deg, #ffa76a, #ff8f4d);
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 24px -3px rgba(255, 113, 43, 0.58),
+    0 0 30px rgba(255, 113, 43, 0.26);
+}
+
+.tour-copilot__botao--secundario.shepherd-button {
+  background: linear-gradient(
+    145deg,
+    rgba(14, 43, 74, 0.35),
+    rgba(3, 13, 28, 0.25)
+  );
+  border: 1px solid rgba(102, 173, 239, 0.22);
+  color: rgba(190, 214, 238, 0.85);
+}
+
+.tour-copilot__botao--secundario.shepherd-button:hover:not(:disabled) {
+  border-color: rgba(103, 232, 249, 0.42);
+  background: linear-gradient(
+    145deg,
+    rgba(16, 72, 110, 0.45),
+    rgba(4, 25, 48, 0.35)
+  );
+  color: #f8fbff;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.12);
+}
+
+/* ------------------------------------------------------------------- seta -- */
+
+.tour-copilot .shepherd-arrow::before {
+  background: #061424;
+  border: 1px solid rgba(102, 173, 239, 0.16);
+}
+
+/*
+ * Com título, o base pinta a seta de #e6e6e6 quando o card fica ABAIXO do
+ * alvo — e vários passos usam `posicao: "bottom"`. Precisa da mesma
+ * especificidade para não aparecer uma ponta cinza sob o card.
+ */
+.tour-copilot.shepherd-element.shepherd-has-title[data-popper-placement^="bottom"]
+  > .shepherd-arrow::before {
+  background-color: #061424;
+}
+
+/* -------------------------------------------------------------- destaque -- */
+
+/*
+ * Halo no elemento em foco. `.shepherd-target` é aplicada pelo próprio
+ * Shepherd no alvo do passo atual.
+ */
+.shepherd-target.shepherd-enabled {
+  border-radius: 0.75rem;
+  box-shadow: 0 0 0 2px rgba(69, 185, 255, 0.5);
+}
+
+/*
+ * O passo que espera clique precisa parecer clicável — sem isto o operador lê
+ * "clique em @Tarefas" e fica procurando onde. `shepherd-target-click-disabled`
+ * é a classe que o Shepherd põe quando canClickTarget é false, então a mira só
+ * aparece justamente nos passos em que o clique vale.
+ */
+.shepherd-target.shepherd-enabled:not(.shepherd-target-click-disabled) {
+  cursor: pointer;
+  animation: tour-copilot-pulso 1.9s ease-in-out infinite;
+}
+
+@keyframes tour-copilot-pulso {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgba(69, 185, 255, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 0 3px rgba(103, 232, 249, 0.85),
+      0 0 26px rgba(69, 185, 255, 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-copilot.shepherd-element {
+    animation: none;
+  }
+
+  .tour-copilot .shepherd-content::after,
+  .tour-copilot__etapa {
+    animation: none;
+  }
+
+  .tour-copilot .shepherd-header::after {
+    transition: none;
+  }
+
+  .shepherd-target.shepherd-enabled:not(.shepherd-target-click-disabled) {
+    animation: none;
+    box-shadow:
+      0 0 0 3px rgba(103, 232, 249, 0.85),
+      0 0 26px rgba(69, 185, 255, 0.4);
+  }
+}

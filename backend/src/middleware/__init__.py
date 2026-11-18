@@ -1,0 +1,1 @@
+from src.middleware.validators import require_fields

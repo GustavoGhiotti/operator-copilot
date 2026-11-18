@@ -1,0 +1,29 @@
+# Local virtual environments
+.venv/
+venv/
+backend/.venv/
+backend/.venv_repair/
+backend/.venv_repair2/
+
+# Temporary files
+.tmp/
+tmp/
+backend/pytest-cache-files-*/
+
+# Local logs
+*.log
+
+# segredos e dados locais
+.env
+.env.*
+!.env*.example
+*.pem
+*.key
+*.asc
+**/session/storage.json
+__pycache__/
+.venv/
+venv/
+node_modules/
+logs/
+*.log

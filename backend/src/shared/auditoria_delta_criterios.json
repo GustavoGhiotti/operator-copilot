@@ -1,0 +1,23 @@
+{
+  "fonte": "Checklist Delta Voz existente no Copilot",
+  "aviso": "Conteúdo interno inicial. Pesos, vigência e criticidade devem ser validados pela área de treinamento.",
+  "categorias": [
+    {"codigo": "ABERTURA", "nome": "Abertura", "itens": ["identificação", "apresentação", "origem da fala"]},
+    {"codigo": "IDENTIFICACAO_DADOS", "nome": "Identificação e confirmação de dados", "itens": ["confirmação segura", "aviso de gravação"]},
+    {"codigo": "COMUNICACAO", "nome": "Comunicação", "itens": ["cordialidade", "objetividade", "clareza"]},
+    {"codigo": "ESCUTA_ATIVA", "nome": "Escuta ativa", "itens": ["não interromper", "considerar respostas do cliente"]},
+    {"codigo": "INVESTIGACAO", "nome": "Investigação", "itens": ["situação financeira", "capacidade de pagamento"]},
+    {"codigo": "NEGOCIACAO", "nome": "Negociação", "itens": ["condução escalonada", "condição compatível"]},
+    {"codigo": "OBJECOES", "nome": "Tratamento de objeções", "itens": ["acolhimento", "resposta coerente"]},
+    {"codigo": "CONDUCAO", "nome": "Condução do atendimento", "itens": ["ratificação", "próximos passos"]},
+    {"codigo": "ENCERRAMENTO", "nome": "Encerramento", "itens": ["canais", "dúvidas", "cordialidade"]},
+    {"codigo": "COMPLIANCE", "nome": "Compliance", "itens": ["sigilo", "informação correta", "conduta adequada"]},
+    {"codigo": "ADERENCIA_TREINAMENTO", "nome": "Aderência ao treinamento Banco Delta", "itens": ["aderência aos materiais fornecidos"]}
+  ],
+  "alertas_criticos_candidatos": [
+    "quebra de sigilo com evidência", "informação incorreta com evidência",
+    "promessa fora das regras fornecidas", "conduta agressiva ou inadequada",
+    "ausência de confirmação obrigatória antes de expor dados"
+  ]
+}
+
